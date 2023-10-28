@@ -4,7 +4,7 @@ Hi ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-912
 Software Engineering Student in University of Bolton 💻
 -------------------------------------------------------
 
-I first started learning about computer science and coding since the age of 15 and I have been actively researching it for the last couple of years. I am really good at front-end but I enjoy writing back-end code more and I know my way around C# and its .NET Framework, JavaScript and React.js, HTML and CSS and I am currently expanding my knowledge base on Python along with TensorFLow
+I first started learning about computer science and coding since the age of 15 and I have been actively researching it for the last couple of years. I am quite good at front-end development but I enjoy writing back-end code more and I know my way around C# and its .NET Framework, JavaScript and React.js, HTML and CSS and I am currently expanding my knowledge base on Python along with TensorFLow.
 
 * 🌍  I'm based in Athens, Greece
 ### * 🖥️  See my portfolio at [My Portfolio Link:](http://david.com) ###
