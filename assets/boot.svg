@@ -1,46 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 406" width="720" height="406" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 362" width="720" height="362" role="img">
 <title>Terminal session: David Gavriilidis, software development graduate, open to junior backend and data roles.</title>
 <style>
 text { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace; font-size: 13.0px; white-space: pre; }
-.appear { animation: appear 8.745000000000001s linear infinite; }
+.appear { animation: appear 8.345s linear infinite; }
 .cursor { animation: blink 1.06s steps(1,end) infinite; }
-@keyframes t0{0%,4.574%{clip-path:inset(0 100% 0 0)}8.3476%,100%{clip-path:inset(0 0 0 0)}}
-@keyframes t1{0%,12.3499%{opacity:0}15.5517%,100%{opacity:1}}
-@keyframes t3{0%,14.6369%{clip-path:inset(0 100% 0 0)}22.1841%,100%{clip-path:inset(0 0 0 0)}}
-@keyframes t4{0%,26.1864%{opacity:0}29.3882%,100%{opacity:1}}
-@keyframes t5{0%,28.4734%{opacity:0}31.6752%,100%{opacity:1}}
-@keyframes t7{0%,30.7604%{clip-path:inset(0 100% 0 0)}40.1944%,100%{clip-path:inset(0 0 0 0)}}
-@keyframes t8{0%,44.1967%{opacity:0}47.3985%,100%{opacity:1}}
-@keyframes t9{0%,46.4837%{opacity:0}49.6855%,100%{opacity:1}}
-@keyframes t10{0%,48.7707%{opacity:0}51.9726%,100%{opacity:1}}
-@keyframes t12{0%,51.0577%{clip-path:inset(0 100% 0 0)}54.8313%,100%{clip-path:inset(0 0 0 0)}}
-@keyframes t13{0%,58.8336%{opacity:0}62.0354%,100%{opacity:1}}
-@keyframes appear{0%,62.2642%{opacity:0}62.2742%,100%{opacity:1}}
+@keyframes t0{0%,4.7933%{clip-path:inset(0 100% 0 0)}8.7478%,100%{clip-path:inset(0 0 0 0)}}
+@keyframes t1{0%,12.9419%{opacity:0}16.2972%,100%{opacity:1}}
+@keyframes t3{0%,15.3385%{clip-path:inset(0 100% 0 0)}23.2475%,100%{clip-path:inset(0 0 0 0)}}
+@keyframes t4{0%,27.4416%{opacity:0}30.7969%,100%{opacity:1}}
+@keyframes t5{0%,29.8382%{opacity:0}33.1935%,100%{opacity:1}}
+@keyframes t7{0%,32.2349%{clip-path:inset(0 100% 0 0)}42.121%,100%{clip-path:inset(0 0 0 0)}}
+@keyframes t8{0%,46.3152%{opacity:0}49.6705%,100%{opacity:1}}
+@keyframes t10{0%,48.7118%{clip-path:inset(0 100% 0 0)}52.6663%,100%{clip-path:inset(0 0 0 0)}}
+@keyframes t11{0%,56.8604%{opacity:0}60.2157%,100%{opacity:1}}
+@keyframes appear{0%,60.4554%{opacity:0}60.465399999999995%,100%{opacity:1}}
 @keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
-@keyframes o0{0%,3.2018%{opacity:0}4.574%,100%{opacity:1}}
-@keyframes o3{0%,13.2647%{opacity:0}14.6369%,100%{opacity:1}}
-@keyframes o7{0%,29.3882%{opacity:0}30.7604%,100%{opacity:1}}
-@keyframes o12{0%,49.6855%{opacity:0}51.0577%,100%{opacity:1}}
-.t0{animation:t0 8.745000000000001s steps(6,end) infinite}
-.t1{animation:t1 8.745000000000001s linear infinite}
-.t3{animation:t3 8.745000000000001s steps(12,end) infinite}
-.t4{animation:t4 8.745000000000001s linear infinite}
-.t5{animation:t5 8.745000000000001s linear infinite}
-.t7{animation:t7 8.745000000000001s steps(15,end) infinite}
-.t8{animation:t8 8.745000000000001s linear infinite}
-.t9{animation:t9 8.745000000000001s linear infinite}
-.t10{animation:t10 8.745000000000001s linear infinite}
-.t12{animation:t12 8.745000000000001s steps(6,end) infinite}
-.t13{animation:t13 8.745000000000001s linear infinite}
-.o0{animation:o0 8.745000000000001s linear infinite}
-.o3{animation:o3 8.745000000000001s linear infinite}
-.o7{animation:o7 8.745000000000001s linear infinite}
-.o12{animation:o12 8.745000000000001s linear infinite}
+@keyframes o0{0%,3.3553%{opacity:0}4.7933%,100%{opacity:1}}
+@keyframes o3{0%,13.9005%{opacity:0}15.3385%,100%{opacity:1}}
+@keyframes o7{0%,30.7969%{opacity:0}32.2349%,100%{opacity:1}}
+@keyframes o10{0%,47.2738%{opacity:0}48.7118%,100%{opacity:1}}
+.t0{animation:t0 8.345s steps(6,end) infinite}
+.t1{animation:t1 8.345s linear infinite}
+.t3{animation:t3 8.345s steps(12,end) infinite}
+.t4{animation:t4 8.345s linear infinite}
+.t5{animation:t5 8.345s linear infinite}
+.t7{animation:t7 8.345s steps(15,end) infinite}
+.t8{animation:t8 8.345s linear infinite}
+.t10{animation:t10 8.345s steps(6,end) infinite}
+.t11{animation:t11 8.345s linear infinite}
+.o0{animation:o0 8.345s linear infinite}
+.o3{animation:o3 8.345s linear infinite}
+.o7{animation:o7 8.345s linear infinite}
+.o10{animation:o10 8.345s linear infinite}
 @media (prefers-reduced-motion: reduce) {
   text, .cursor, .appear { animation: none !important; clip-path: none !important; opacity: 1 !important; }
 }
 </style>
-<rect x="0.5" y="0.5" width="719" height="405" rx="10" fill="#101922" stroke="#26333f"/>
+<rect x="0.5" y="0.5" width="719" height="361" rx="10" fill="#101922" stroke="#26333f"/>
 <path d="M0.5 10.5a10 10 0 0 1 10-10h699a10 10 0 0 1 10 10v24H0.5z" fill="#18232f"/>
 <line x1="0.5" y1="34.0" x2="720" y2="34.0" stroke="#26333f"/>
 <circle cx="22" cy="17.0" r="5" fill="#3f4d5a"/><circle cx="39" cy="17.0" r="5" fill="#4a5a68"/><circle cx="56" cy="17.0" r="5" fill="#556676"/>
@@ -54,15 +50,11 @@ text { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'D
 <text x="26.0" y="177.0" fill="#62778a" font-weight="400" textLength="538.2" lengthAdjust="spacing" class="t5">Drawn to problems where the input is hostile and the schema is a lie.</text>
 <text x="26.0" y="221.0" fill="#62778a" font-weight="400" textLength="93.6" lengthAdjust="spacing" class="o7">~/vwdshka $ </text>
 <text x="119.6" y="221.0" fill="#7fd1d8" font-weight="500" textLength="117.0" lengthAdjust="spacing" class="t7">ls -1 projects/</text>
-<text x="26.0" y="243.0" fill="#d7e0e8" font-weight="400" textLength="140.4" lengthAdjust="spacing" class="t8">openchartexcavator</text>
-<text x="228.8" y="243.0" fill="#62778a" font-weight="400" textLength="327.6" lengthAdjust="spacing" class="t8">headless extraction from JS-rendered pages</text>
-<text x="26.0" y="265.0" fill="#d7e0e8" font-weight="400" textLength="171.6" lengthAdjust="spacing" class="t9">llm-fake-news-detector</text>
-<text x="228.8" y="265.0" fill="#62778a" font-weight="400" textLength="304.2" lengthAdjust="spacing" class="t9">classification over noisy, scraped text</text>
-<text x="26.0" y="287.0" fill="#d7e0e8" font-weight="400" textLength="93.6" lengthAdjust="spacing" class="t10">cozychatnoui</text>
-<text x="228.8" y="287.0" fill="#62778a" font-weight="400" textLength="304.2" lengthAdjust="spacing" class="t10">a chat server with no UI to hide behind</text>
-<text x="26.0" y="331.0" fill="#62778a" font-weight="400" textLength="93.6" lengthAdjust="spacing" class="o12">~/vwdshka $ </text>
-<text x="119.6" y="331.0" fill="#7fd1d8" font-weight="500" textLength="46.8" lengthAdjust="spacing" class="t12">status</text>
-<text x="26.0" y="353.0" fill="#e8b563" font-weight="500" textLength="460.2" lengthAdjust="spacing" class="t13">● Open to junior backend / data roles - Greece or EU remote</text>
-<text x="26.0" y="375.0" fill="#62778a" font-weight="400" textLength="93.6" lengthAdjust="spacing" class="appear">~/vwdshka $ </text>
-<g class="appear"><rect class="cursor" x="119.6" y="364.0" width="7.8" height="13.0" fill="#7fd1d8" opacity="0.9"/></g>
+<text x="26.0" y="243.0" fill="#d7e0e8" font-weight="400" textLength="140.4" lengthAdjust="spacing" class="t8">swe6002-lostnfound</text>
+<text x="228.8" y="243.0" fill="#62778a" font-weight="400" textLength="109.2" lengthAdjust="spacing" class="t8">Initial Commit</text>
+<text x="26.0" y="287.0" fill="#62778a" font-weight="400" textLength="93.6" lengthAdjust="spacing" class="o10">~/vwdshka $ </text>
+<text x="119.6" y="287.0" fill="#7fd1d8" font-weight="500" textLength="46.8" lengthAdjust="spacing" class="t10">status</text>
+<text x="26.0" y="309.0" fill="#e8b563" font-weight="500" textLength="460.2" lengthAdjust="spacing" class="t11">● Open to junior backend / data roles - Greece or EU remote</text>
+<text x="26.0" y="331.0" fill="#62778a" font-weight="400" textLength="93.6" lengthAdjust="spacing" class="appear">~/vwdshka $ </text>
+<g class="appear"><rect class="cursor" x="119.6" y="320.0" width="7.8" height="13.0" fill="#7fd1d8" opacity="0.9"/></g>
 </svg>
