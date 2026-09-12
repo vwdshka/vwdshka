@@ -36,6 +36,7 @@ are also no tests against recorded fixtures, which is the first thing I'd add.
 <details>
 <summary><code>myData.Client</code> — a typed .NET client for the API a Greek business legally can't avoid</summary>
 <br>
+ 
 **PROBLEM** — Every business in Greece is required to transmit invoice data to
 AADE's myDATA platform in real time. The official spec is a formal XSD/XML
 contract with no first-party .NET client, so integrating it means hand-rolling
@@ -65,6 +66,7 @@ paper over with a synthetic fixture.
 <details>
 <summary><code>tabsesh</code> — a tab manager with a terminal instead of a settings page</summary>
 <br>
+ 
 **PROBLEM** — Browser tab managers are either a bookmarks-bar clone or a
 subscription product that wants a login. I wanted one keyboard-driven tool
 with no backend, where closing 40 tabs is reversible rather than a gamble.
