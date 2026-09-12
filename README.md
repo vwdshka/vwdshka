@@ -34,6 +34,63 @@ are also no tests against recorded fixtures, which is the first thing I'd add.
 </details>
 
 <details>
+<summary><code>myData.Client</code> — a typed .NET client for the API a Greek business legally can't avoid</summary>
+<br>
+**PROBLEM** — Every business in Greece is required to transmit invoice data to
+AADE's myDATA platform in real time. The official spec is a formal XSD/XML
+contract with no first-party .NET client, so integrating it means hand-rolling
+serialization and hoping the wire format was read correctly.
+ 
+**APPROACH** — Wire models generated straight from AADE's XSDs, kept internal;
+a hand-written public model on top; and a mapping layer between the two, so a
+schema revision from AADE doesn't force a breaking change on anyone using the
+package.
+ 
+**THE HARD PART** — `SendInvoices` returns HTTP 200 even when some invoices in
+the batch failed validation — business errors arrive as data inside a
+successful response, not as an exception. That meant designing a result type
+that correlates each outcome back to the invoice that produced it, rather than
+the usual throw-on-failure model.
+ 
+**WHAT I'D CHANGE** — No real sandbox capture of a successful `SendInvoices`
+call exists yet — every attempt against AADE's dev environment came back with
+an undocumented timing-related rejection (error 263) that isn't described in
+any published spec. That's the next thing to chase down, not something to
+paper over with a synthetic fixture.
+ 
+[→ repository](https://github.com/vwdshka/myData-Client-Lib)
+ 
+</details>
+
+<details>
+<summary><code>tabsesh</code> — a tab manager with a terminal instead of a settings page</summary>
+<br>
+**PROBLEM** — Browser tab managers are either a bookmarks-bar clone or a
+subscription product that wants a login. I wanted one keyboard-driven tool
+with no backend, where closing 40 tabs is reversible rather than a gamble.
+ 
+**APPROACH** — Chrome's own bookmarks as the only data store — no database,
+sync comes free from the browser account. A single core module with no UI
+code at all, called identically by a popup, a full-page app, and an
+in-browser terminal, so all three interfaces are always in sync.
+ 
+**THE HARD PART** — Manifest V3 service workers get killed and restarted by
+the browser at any moment, which breaks a plain `setTimeout`. Timed focus
+sessions needed `chrome.alarms` instead, since that's the one timer primitive
+that survives the worker going idle mid-countdown.
+ 
+**RESULT** — 73 Vitest tests against a small in-memory fake for
+`chrome.bookmarks`/`tabGroups` (the standard WXT test fake doesn't implement
+either), which caught two real bugs before shipping: a delete/undo race when
+two deletions landed in the same millisecond, and a bug in the fake browser
+library itself.
+ 
+[→ repository](https://github.com/vwdshka/tabsesh)
+ 
+</details>
+
+
+<details>
 <summary><code>llm-fake-news-detector</code> — classification over text nobody cleaned first</summary>
 
 <br>
