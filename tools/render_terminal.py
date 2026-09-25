@@ -1,53 +1,34 @@
 #!/usr/bin/env python3
 """
-Renders assets/boot.svg -- an animated terminal session for the profile README.
+Renders assets/terminal.svg, the animated terminal header for the profile README.
 
-No dependencies. Run it:      python3 tools/render_terminal.py
-Refresh with live GitHub data: GITHUB_TOKEN=... GITHUB_USER=vwdshka python3 tools/render_terminal.py
+    python3 tools/render_terminal.py
 
-Why a generator instead of hand-written SVG: the file is ~500 lines of computed
-keyframes. Editing the content should mean editing SESSION below, not the SVG.
+The keyframes are computed, so edit SESSION below rather than the SVG.
 """
 
 import html
-import json
-import os
-import urllib.request
 from pathlib import Path
-
-# --------------------------------------------------------------------------
-# Content. Edit this, not the SVG.
-# --------------------------------------------------------------------------
 
 PROMPT = "~/vwdshka $ "
 
-# ("cmd", text)              -> typed out character by character, in accent colour
-# ("out", text)              -> printed instantly, body colour
-# ("row", left, right)       -> printed instantly, two columns
-# ("hi",  text)              -> printed instantly, highlight colour
-# ("gap",)                   -> blank line
+# cmd: typed out   out/dim/hi: printed at once   row: two columns   gap: blank line
 SESSION = [
     ("cmd", "whoami"),
-    ("out", "David Gavriilidis - BSc Software Development, University of Bolton"),
+    ("out", "David Gavriilidis - BSc Software Development, Univ. of Greater Manchester"),
     ("gap",),
     ("cmd", "cat focus.md"),
-    ("out", "Backend and data extraction. Python, C#, JavaScript."),
-    ("dim", "Drawn to problems where the input is hostile and the schema is a lie."),
+    ("out", "Backend and data extraction. Python, C#, TypeScript."),
+    ("dim", "Mostly the parts where the input doesn't match the spec."),
     ("gap",),
     ("cmd", "ls -1 projects/"),
-    ("row", "openchartexcavator", "headless extraction from JS-rendered pages"),
-    ("row", "llm-fake-news-detector", "classification over noisy, scraped text"),
-    ("row", "cozychatnoui", "a chat server with no UI to hide behind"),
+    ("row", "ixnos-data", "search over Greek public procurement data"),
+    ("row", "myData-Client-Lib", "typed .NET client for AADE myDATA"),
+    ("row", "tabsesh", "tab manager with a built-in terminal"),
     ("gap",),
     ("cmd", "status"),
-    ("hi", "● Open to junior backend / data roles - Greece or EU remote"),
+    ("hi", "● Open to junior backend / data roles - Athens or EU remote"),
 ]
-
-# --------------------------------------------------------------------------
-# Look. A considered terminal, not a hacker-movie one: deep slate-blue ground,
-# aegean cyan for the things you typed, amber reserved for the single line that
-# is actually asking the reader for something.
-# --------------------------------------------------------------------------
 
 C = {
     "ground": "#101922",
@@ -77,55 +58,7 @@ COL2 = 26            # column where the right-hand description starts
 TYPE_PER_CHAR = 0.055
 PAUSE_AFTER_CMD = 0.35
 PAUSE_AFTER_OUT = 0.20
-HOLD_AT_END = 3.4
-
-# --------------------------------------------------------------------------
-
-
-def live_repos(user, token):
-    """Newest 3 pushed repos, as (name, description). Best effort."""
-    req = urllib.request.Request(
-        f"https://api.github.com/users/{user}/repos?sort=pushed&per_page=12",
-        headers={"Accept": "application/vnd.github+json",
-                 "Authorization": f"Bearer {token}",
-                 "User-Agent": "profile-readme"},
-    )
-    with urllib.request.urlopen(req, timeout=20) as r:
-        repos = json.load(r)
-    out = []
-    for repo in repos:
-        if repo.get("fork") or repo.get("archived"):
-            continue
-        desc = (repo.get("description") or "").strip()
-        if not desc:
-            continue          # a repo with no description does not deserve a slot
-        out.append((repo["name"], desc))
-        if len(out) == 3:
-            break
-    return out
-
-
-def apply_live(session):
-    token, user = os.environ.get("GITHUB_TOKEN"), os.environ.get("GITHUB_USER")
-    if not (token and user):
-        return session
-    try:
-        rows = live_repos(user, token)
-    except Exception as exc:               # never let the cron break the README
-        print(f"live refresh skipped: {exc}")
-        return session
-    if not rows:
-        return session
-    out, replaced = [], False
-    for line in session:
-        if line[0] == "row":
-            if not replaced:
-                replaced = True
-                for name, desc in rows:
-                    out.append(("row", name[:COL2 - 2], desc[:60]))
-            continue
-        out.append(line)
-    return out
+HOLD_AT_END = 20.0   # seconds the finished session stays up before looping
 
 
 def esc(s):
@@ -133,11 +66,9 @@ def esc(s):
 
 
 def build():
-    session = apply_live(SESSION)
-
-    # ---- lay the session out on a timeline -------------------------------
+    # timeline
     rows, t = [], 0.4
-    for line in session:
+    for line in SESSION:
         kind = line[0]
         if kind == "gap":
             rows.append({"kind": "gap"})
@@ -163,7 +94,7 @@ def build():
     def pct(seconds):
         return round(max(0.0, min(100.0, seconds / total * 100)), 4)
 
-    # ---- keyframes -------------------------------------------------------
+    # keyframes
     keyframes, classes = [], []
     for i, r in enumerate(rows):
         if r["kind"] == "gap":
@@ -186,7 +117,7 @@ def build():
         f"{min(cs + 0.01, 100)}%,100%{{opacity:1}}}}")
     keyframes.append("@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}")
 
-    # ---- body ------------------------------------------------------------
+    # body
     body, y = [], BAR_H + PAD_TOP + FS
     prompt_w = len(PROMPT) * CW
 
@@ -258,7 +189,7 @@ text {{ font-family: {FONT}; font-size: {FS}px; white-space: pre; }}
 {chr(10).join(body)}
 </svg>
 """
-    out = Path(__file__).resolve().parent.parent / "assets" / "boot.svg"
+    out = Path(__file__).resolve().parent.parent / "assets" / "terminal.svg"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(svg, encoding="utf-8")
     print(f"wrote {out}  ({height:.0f}px tall, {total:.1f}s loop)")
