@@ -1,166 +1,65 @@
-<img src="assets/boot.svg" alt="Terminal session. whoami: David Gavriilidis, BSc Software Development, University of Bolton. Backend and data extraction in Python, C# and JavaScript. Open to junior backend and data roles, Greece or EU remote." width="720">
+<p align="center">
+  <img src="./assets/terminal.svg" alt="vwdshka — zsh" width="100%">
+</p>
 
-> **Open to junior backend / data roles.** Greece or EU remote, from 2026.
-> [email](mailto:davedev0406@gmail.com) · [LinkedIn](https://www.linkedin.com/in/david-gavriilidis-55707b252/)
-
----
-
-### Work
-
-<details>
-<summary><code>openchartexcavator</code> — pulling structured data out of pages that refuse to be parsed</summary>
-
-<br>
-
-**PROBLEM** — Client-side rendering broke the cheap approach. `requests` + a
-parser gets you an empty `<div id="root">`, so anything worth extracting has to
-be harvested after the JavaScript has run.
-
-**APPROACH** — Selenium driving headless Chrome, with extraction logic split
-into independent modules under `components/`. When a target site changes its
-DOM, one module breaks instead of the whole run.
-
-**THE HARD PART** — Synchronisation. Fixed `sleep()` calls are either too slow
-or too flaky; implicit waits paper over `StaleElementReferenceException`
-without fixing it. Explicit waits on element state made runs survive slow and
-throttled connections.
-
-**WHAT I'D CHANGE** — Selenium is a heavy dependency for what this does; a
-CDP-level driver like Playwright would cut startup cost significantly. There
-are also no tests against recorded fixtures, which is the first thing I'd add.
-
-[→ repository](https://github.com/vwdshka/OpenChartExcavator)
-
-</details>
-
-<details>
-<summary><code>myData.Client</code> — a typed .NET client for the API a Greek business legally can't avoid</summary>
-<br>
- 
-**PROBLEM** — Every business in Greece is required to transmit invoice data to
-AADE's myDATA platform in real time. The official spec is a formal XSD/XML
-contract with no first-party .NET client, so integrating it means hand-rolling
-serialization and hoping the wire format was read correctly.
- 
-**APPROACH** — Wire models generated straight from AADE's XSDs, kept internal;
-a hand-written public model on top; and a mapping layer between the two, so a
-schema revision from AADE doesn't force a breaking change on anyone using the
-package.
- 
-**THE HARD PART** — `SendInvoices` returns HTTP 200 even when some invoices in
-the batch failed validation — business errors arrive as data inside a
-successful response, not as an exception. That meant designing a result type
-that correlates each outcome back to the invoice that produced it, rather than
-the usual throw-on-failure model.
- 
-**WHAT I'D CHANGE** — No real sandbox capture of a successful `SendInvoices`
-call exists yet — every attempt against AADE's dev environment came back with
-an undocumented timing-related rejection (error 263) that isn't described in
-any published spec. That's the next thing to chase down, not something to
-paper over with a synthetic fixture.
- 
-[→ repository](https://github.com/vwdshka/myData-Client-Lib)
- 
-</details>
-
-<details>
-<summary><code>tabsesh</code> — a tab manager with a terminal instead of a settings page</summary>
-<br>
- 
-**PROBLEM** — Browser tab managers are either a bookmarks-bar clone or a
-subscription product that wants a login. I wanted one keyboard-driven tool
-with no backend, where closing 40 tabs is reversible rather than a gamble.
- 
-**APPROACH** — Chrome's own bookmarks as the only data store — no database,
-sync comes free from the browser account. A single core module with no UI
-code at all, called identically by a popup, a full-page app, and an
-in-browser terminal, so all three interfaces are always in sync.
- 
-**THE HARD PART** — Manifest V3 service workers get killed and restarted by
-the browser at any moment, which breaks a plain `setTimeout`. Timed focus
-sessions needed `chrome.alarms` instead, since that's the one timer primitive
-that survives the worker going idle mid-countdown.
- 
-**RESULT** — 73 Vitest tests against a small in-memory fake for
-`chrome.bookmarks`/`tabGroups` (the standard WXT test fake doesn't implement
-either), which caught two real bugs before shipping: a delete/undo race when
-two deletions landed in the same millisecond, and a bug in the fake browser
-library itself.
- 
-[→ repository](https://github.com/vwdshka/tabsesh)
- 
-</details>
-
-
-<details>
-<summary><code>llm-fake-news-detector</code> — classification over text nobody cleaned first</summary>
-
-<br>
-
-**PROBLEM** — TODO: one sentence. What decision does the model actually make,
-and on whose data?
-
-**APPROACH** — TODO: model, features, why that one and not the obvious
-baseline.
-
-**THE HARD PART** — TODO: the thing that took three days. Class imbalance?
-Leakage between train and test? Evaluation that looked great and meant nothing?
-
-**RESULT** — TODO: a number, and the baseline it beat. "0.87 F1 against a
-0.64 majority-class baseline" beats any adjective you could write here.
-
-[→ repository](https://github.com/vwdshka/LLM-Fake-News-Detector)
-
-</details>
-
-<details>
-<summary><code>cozychatnoui</code> — a chat server with no UI to hide behind</summary>
-
-<br>
-
-**PROBLEM** — TODO: why build this rather than use a library?
-
-**APPROACH** — TODO: transport, concurrency model, how state is held.
-
-**THE HARD PART** — TODO: concurrent connections? Message ordering? Clean
-disconnects?
-
-[→ repository](https://github.com/vwdshka/CozyChatNoUI)
-
-</details>
+<p align="center">
+  <a href="mailto:davedev0406@gmail.com"><img src="https://img.shields.io/badge/email-davedev0406%40gmail.com-161b22?style=flat-square&logo=gmail&logoColor=e6edf3&labelColor=0d1117" alt="Email"></a>
+  <a href="https://www.linkedin.com/in/david-gavriilidis-55707b252/"><img src="https://img.shields.io/badge/LinkedIn-David%20Gavriilidis-161b22?style=flat-square&logo=linkedin&logoColor=e6edf3&labelColor=0d1117" alt="LinkedIn"></a>
+  <img src="https://img.shields.io/badge/location-Athens%2C%20GR%20·%20EU%20remote-161b22?style=flat-square&labelColor=0d1117" alt="Location">
+</p>
 
 ---
 
-### Stack
+## Projects
 
-Sorted by how much I'd trust myself in production
+### [`ixnos-data`](https://github.com/vwdshka/ixnos-data)
+`C#` · `.NET` · `Python` · `PostgreSQL` · `Next.js`
 
-```console
-$ stack --honest
+Made Greek public procurement data (ΚΗΜΔΗΣ tenders and Διαύγεια spending decisions) searchable in Greek or Greeklish, reaching precision@10 of 0.84–1.00 on a 56-query test set, by building a Python ingestion pipeline, a .NET 10 API and a Next.js front end around PostgreSQL full-text search with trigram and phonetic matching. Before writing a schema I probed 614,000 real records, which is how I found that titles get cut at 100 characters and that some payments are typos worth over €100 million. The four services share only the database, so a mail outage can't take the site down. A static edition runs on [GitHub Pages](https://vwdshka.github.io/ixnos-data/) and refreshes every three hours.
 
-reach for daily     Python · SQL · Git
-used in anger       C# / .NET · JavaScript · Selenium · Docker
-know enough to      React · Firebase · Jupyter / pandas · scikit-learn
-be dangerous
-currently learning  fastapi and aws in greater detail
-```
+### [`myData-Client-Lib`](https://github.com/vwdshka/myData-Client-Lib)
+`C#` · `.NET` · `XML / XSD` · `HttpClient`
+
+Built a typed .NET client for AADE's myDATA, the e-invoicing API every Greek business is legally required to report through. It catches 11 of AADE's server-side rejection codes on the caller's machine, by reproducing AADE's arithmetic and business rules in a validator that runs before anything is serialized. A batch can come back as HTTP 200 with some invoices rejected, so results are returned per invoice instead of as exceptions. The XSD-generated wire models sit behind a mapping layer, so a schema revision doesn't break the public API. Tested at four levels: unit, golden-file XML snapshots, contract tests against captured sandbox responses, and live sandbox calls.
+
+### [`tabsesh`](https://github.com/vwdshka/tabsesh)
+`TypeScript` · `Svelte` · `WebExtensions (MV3)` · `Vitest`
+
+Turned closing 60+ tabs into one undoable command, covered by 73 Vitest tests that caught two bugs before release, by building a Manifest V3 extension where a popup, a full-page GUI and an in-browser terminal all call the same UI-free TypeScript core. Chrome's own bookmarks are the only data store, so sync between devices comes free with no server or account. Deleted folders sit in a trash for 48 hours, and timed focus sessions use `chrome.alarms` because a plain timer dies whenever the service worker is killed.
+
+### [`OpenChartExcavator`](https://github.com/vwdshka/OpenChartExcavator)
+`Python` · `Selenium` · `WebDriver` · team project
+
+Owned the back end of a four-person open-source app that lists every business in an area a user picks on Google Maps (names, links, images, reviews and details), for trip planning, local market research and finding sales leads. Google Maps only renders client-side, so the back end drives headless Chrome through Selenium, with the extraction split into six independent `fetch_` modules so a change to Google's markup breaks one module instead of the whole run. A dedicated wait module holds off each action until the page is ready, which helps avoid Google's automation blocking. Explicit waits on element state replaced fixed sleeps and stopped `StaleElementReferenceException` failures on slow connections. Google changes its DOM often, so XPath selectors are a stopgap that needs ongoing monitoring. I also built parts of the Flutter front end so it worked cleanly with the back end; teammates built the rest of the app.
+
+### [`CozyChatNoUI`](https://github.com/vwdshka/CozyChatNoUI)
+`C#` · `.NET` · `TCP Sockets` · `WPF`
+
+Built real-time multi-user chat over raw TCP, tested with 20 concurrent users and no noticeable message delay, with a central server broadcasting every message to all connected clients. I handled message framing myself: TCP has no message boundaries, so `NetworkStream` reads collect in a `MemoryStream` until a full packet arrives. The WPF client does network I/O on background threads so the UI never blocks. The server uses one thread per connection, which limits how many clients it can handle; async socket I/O would fix that.
+
+### [`LLM-Fake-News-Detector`](https://github.com/vwdshka/LLM-Fake-News-Detector)
+`Python` · `scikit-learn` · `TensorFlow` · `Transformers` · `SHAP` · `Flask`
+
+Built a misinformation detector that runs three models side by side (a TF-IDF logistic regression baseline, a bidirectional LSTM and BERT), reaching 98.42%, 99.91% and 99.74% test accuracy against an 85% target. Scores that high on a static dataset looked suspicious, so I tested the models on real articles from outside it and used SHAP to see which words drove each prediction. The models had learned shortcuts: publisher names like "Reuters" and dash characters were enough to flip a verdict. I fixed this with regex cleaning that strips those signals before training and inference. Splitting the app into modules and loading BERT in the background brought prediction time from about 1.5 seconds down to 8–10 ms, served through a Flask web app that shows all three verdicts together.
 
 ---
 
-### How I work
+## Technical Capabilities
 
-- Planning and taking notes is the first step that I will take. Comprehension and analysis is key.
-- I'd rather ship something small that handles the ugly input than something broad that only works on the happy path.
-- I ask early. Two days lost to pride costs more than one awkward question.
-
----
-
-### Education
-
-**BSc (Hons) Software Development** — University of Bolton, August 2026
+| Domain | Technologies |
+| :-- | :-- |
+| **Languages** | Python · C# · TypeScript · JavaScript · Java · SQL |
+| **Backend** | FastAPI · Flask · Java Spring Boot · .NET · PostgreSQL · REST API design · TCP socket programming |
+| **Frontend** | React · Next.js · Svelte · TypeScript · Browser Extensions (WebExtensions API) |
+| **Data & ML** | pandas · scikit-learn · TensorFlow · SHAP · Jupyter · Selenium · structured data extraction |
+| **Infrastructure** | Docker · Git · GitHub Actions · Firebase · AWS (foundational) |
 
 ---
 
-<sub>The header is an SVG generated by
-<a href="tools/render_terminal.py"><code>tools/render_terminal.py</code></a> and
-refreshed nightly by a GitHub Action. A custom, self-made README :).</sub>
+## Education
+
+**BSc (Hons) Software Development** — University of Greater Manchester, August 2026
+
+---
+
+<sub>The header is an animated SVG rendered from <a href="./tools/render_terminal.py"><code>tools/render_terminal.py</code></a>. It types once, holds the complete output for 20 seconds, then restarts.</sub>

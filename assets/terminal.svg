@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 406" width="720" height="406" role="img">
+<title>Terminal session: David Gavriilidis, software development graduate, open to junior backend and data roles.</title>
+<style>
+text { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace; font-size: 13.0px; white-space: pre; }
+.appear { animation: appear 25.345s linear infinite; }
+.cursor { animation: blink 1.06s steps(1,end) infinite; }
+@keyframes t0{0%,1.5782%{clip-path:inset(0 100% 0 0)}2.8803%,100%{clip-path:inset(0 0 0 0)}}
+@keyframes t1{0%,4.2612%{opacity:0}5.3659%,100%{opacity:1}}
+@keyframes t3{0%,5.0503%{clip-path:inset(0 100% 0 0)}7.6544%,100%{clip-path:inset(0 0 0 0)}}
+@keyframes t4{0%,9.0353%{opacity:0}10.1401%,100%{opacity:1}}
+@keyframes t5{0%,9.8244%{opacity:0}10.9292%,100%{opacity:1}}
+@keyframes t7{0%,10.6135%{clip-path:inset(0 100% 0 0)}13.8686%,100%{clip-path:inset(0 0 0 0)}}
+@keyframes t8{0%,15.2496%{opacity:0}16.3543%,100%{opacity:1}}
+@keyframes t9{0%,16.0387%{opacity:0}17.1434%,100%{opacity:1}}
+@keyframes t10{0%,16.8278%{opacity:0}17.9325%,100%{opacity:1}}
+@keyframes t12{0%,17.6169%{clip-path:inset(0 100% 0 0)}18.9189%,100%{clip-path:inset(0 0 0 0)}}
+@keyframes t13{0%,20.2999%{opacity:0}21.4046%,100%{opacity:1}}
+@keyframes appear{0%,21.4835%{opacity:0}21.4935%,100%{opacity:1}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes o0{0%,1.1048%{opacity:0}1.5782%,100%{opacity:1}}
+@keyframes o3{0%,4.5768%{opacity:0}5.0503%,100%{opacity:1}}
+@keyframes o7{0%,10.1401%{opacity:0}10.6135%,100%{opacity:1}}
+@keyframes o12{0%,17.1434%{opacity:0}17.6169%,100%{opacity:1}}
+.t0{animation:t0 25.345s steps(6,end) infinite}
+.t1{animation:t1 25.345s linear infinite}
+.t3{animation:t3 25.345s steps(12,end) infinite}
+.t4{animation:t4 25.345s linear infinite}
+.t5{animation:t5 25.345s linear infinite}
+.t7{animation:t7 25.345s steps(15,end) infinite}
+.t8{animation:t8 25.345s linear infinite}
+.t9{animation:t9 25.345s linear infinite}
+.t10{animation:t10 25.345s linear infinite}
+.t12{animation:t12 25.345s steps(6,end) infinite}
+.t13{animation:t13 25.345s linear infinite}
+.o0{animation:o0 25.345s linear infinite}
+.o3{animation:o3 25.345s linear infinite}
+.o7{animation:o7 25.345s linear infinite}
+.o12{animation:o12 25.345s linear infinite}
+@media (prefers-reduced-motion: reduce) {
+  text, .cursor, .appear { animation: none !important; clip-path: none !important; opacity: 1 !important; }
+}
+</style>
+<rect x="0.5" y="0.5" width="719" height="405" rx="10" fill="#101922" stroke="#26333f"/>
+<path d="M0.5 10.5a10 10 0 0 1 10-10h699a10 10 0 0 1 10 10v24H0.5z" fill="#18232f"/>
+<line x1="0.5" y1="34.0" x2="720" y2="34.0" stroke="#26333f"/>
+<circle cx="22" cy="17.0" r="5" fill="#3f4d5a"/><circle cx="39" cy="17.0" r="5" fill="#4a5a68"/><circle cx="56" cy="17.0" r="5" fill="#556676"/>
+<text x="360" y="21" fill="#62778a" font-size="11" text-anchor="middle">vwdshka - zsh</text>
+<text x="26.0" y="67.0" fill="#62778a" font-weight="400" textLength="93.6" lengthAdjust="spacing" class="o0">~/vwdshka $ </text>
+<text x="119.6" y="67.0" fill="#7fd1d8" font-weight="500" textLength="46.8" lengthAdjust="spacing" class="t0">whoami</text>
+<text x="26.0" y="89.0" fill="#f2f6fa" font-weight="400" textLength="569.4" lengthAdjust="spacing" class="t1">David Gavriilidis - BSc Software Development, Univ. of Greater Manchester</text>
+<text x="26.0" y="133.0" fill="#62778a" font-weight="400" textLength="93.6" lengthAdjust="spacing" class="o3">~/vwdshka $ </text>
+<text x="119.6" y="133.0" fill="#7fd1d8" font-weight="500" textLength="93.6" lengthAdjust="spacing" class="t3">cat focus.md</text>
+<text x="26.0" y="155.0" fill="#f2f6fa" font-weight="400" textLength="405.6" lengthAdjust="spacing" class="t4">Backend and data extraction. Python, C#, TypeScript.</text>
+<text x="26.0" y="177.0" fill="#62778a" font-weight="400" textLength="436.8" lengthAdjust="spacing" class="t5">Mostly the parts where the input doesn't match the spec.</text>
+<text x="26.0" y="221.0" fill="#62778a" font-weight="400" textLength="93.6" lengthAdjust="spacing" class="o7">~/vwdshka $ </text>
+<text x="119.6" y="221.0" fill="#7fd1d8" font-weight="500" textLength="117.0" lengthAdjust="spacing" class="t7">ls -1 projects/</text>
+<text x="26.0" y="243.0" fill="#d7e0e8" font-weight="400" textLength="78.0" lengthAdjust="spacing" class="t8">ixnos-data</text>
+<text x="228.8" y="243.0" fill="#62778a" font-weight="400" textLength="319.8" lengthAdjust="spacing" class="t8">search over Greek public procurement data</text>
+<text x="26.0" y="265.0" fill="#d7e0e8" font-weight="400" textLength="132.6" lengthAdjust="spacing" class="t9">myData-Client-Lib</text>
+<text x="228.8" y="265.0" fill="#62778a" font-weight="400" textLength="257.4" lengthAdjust="spacing" class="t9">typed .NET client for AADE myDATA</text>
+<text x="26.0" y="287.0" fill="#d7e0e8" font-weight="400" textLength="54.6" lengthAdjust="spacing" class="t10">tabsesh</text>
+<text x="228.8" y="287.0" fill="#62778a" font-weight="400" textLength="280.8" lengthAdjust="spacing" class="t10">tab manager with a built-in terminal</text>
+<text x="26.0" y="331.0" fill="#62778a" font-weight="400" textLength="93.6" lengthAdjust="spacing" class="o12">~/vwdshka $ </text>
+<text x="119.6" y="331.0" fill="#7fd1d8" font-weight="500" textLength="46.8" lengthAdjust="spacing" class="t12">status</text>
+<text x="26.0" y="353.0" fill="#e8b563" font-weight="500" textLength="460.2" lengthAdjust="spacing" class="t13">● Open to junior backend / data roles - Athens or EU remote</text>
+<text x="26.0" y="375.0" fill="#62778a" font-weight="400" textLength="93.6" lengthAdjust="spacing" class="appear">~/vwdshka $ </text>
+<g class="appear"><rect class="cursor" x="119.6" y="364.0" width="7.8" height="13.0" fill="#7fd1d8" opacity="0.9"/></g>
+</svg>
